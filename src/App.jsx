@@ -36,7 +36,7 @@ export class App extends React.Component {
         <VideoSearch onSearchVideos={this.onSearchVideos} />
         <VideoList onPlayVideo={this.onPlayVideo} videos={videos} />
         <VideoPlayer playingVideo={playingVideo} />
-        <AppFooter />
+        <AppFooter vp={this.state.playingVideo} />
       </section>
     )
   }
