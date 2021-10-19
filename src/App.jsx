@@ -15,7 +15,11 @@ export class App extends React.Component {
 
   async componentDidMount() {
     const videos = await videoService.getVideos('bruria')
-    this.setState({ videos })
+
+    this.setState({ 
+      videos,
+      playingVideo: videos[0]
+     })
   }
 
   onSearchVideos = async (searchKey) => {
@@ -25,6 +29,7 @@ export class App extends React.Component {
 
   onPlayVideo = (playingVideo) => {
     console.log("🚀 ~ file: App.jsx ~ line 27 ~ App ~ playingVideo", playingVideo)
+    playingVideo.id.videoId+=`?autoplay=1`
     this.setState({ playingVideo })
   }
 

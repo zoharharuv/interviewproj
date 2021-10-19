@@ -1,4 +1,8 @@
 .video-player{
+    iframe{
+        border: none;
+        border-radius: 5px;
+    }
     @include for-narrow-layout {
         display: flex;
         justify-content: center;
