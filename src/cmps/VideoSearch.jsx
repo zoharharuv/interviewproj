@@ -18,7 +18,7 @@ export class VideoSearch extends Component {
         return (
             <section className="video-search">
                 <div className="search-bar">
-                    <input onChange={this.handleChange} value={this.state.input} type="search" id="search-bar" placeholder="Search a video!" autoFocus />
+                    <input onChange={this.handleChange} value={this.state.input} type="search" id="search-bar" placeholder="Search on YouTube" autoFocus />
                     <button onClick={this.onSearch}>🔍</button>
                 </div>
 

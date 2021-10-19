@@ -2,8 +2,8 @@
   // padding: 20px;
   display: grid;
   height: 100vh;
-  gap: 10px;
-  grid-template-columns: 50px 0.7fr 1fr 50px;
+  gap: 25px;
+  grid-template-columns: 80px 0.7fr 1fr 80px;
   grid-template-rows: 100px 100px 1fr 100px;
   grid-template-areas:
     "header header header header"
@@ -11,8 +11,9 @@
     ". list player ."
     "footer footer footer footer";
   @include for-narrow-layout {
+    height: unset;
     grid-template-columns: 0px 1fr 0px;
-    grid-template-rows: 100px 100px 1fr 1fr 100px;
+    grid-template-rows: 100px 80px 0.8fr 1fr 100px;
     grid-template-areas:
       "header header header"
       ". search  ."

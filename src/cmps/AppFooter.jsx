@@ -2,13 +2,13 @@ import { Component } from "react";
 
 export class AppFooter extends Component {
     render() {
-        const {vp} = this.props
+        const {currentVideo} = this.props
         return (
             <section className="app-footer flex center-center">
                 {
-                    vp && <h3>
+                    currentVideo && <h3>
                        {
-                           `Currently Playing: ${vp.snippet.title}`
+                           `Currently Playing: ${currentVideo.snippet.title}`
                        }
                     </h3>
                 }

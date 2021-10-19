@@ -1,33 +1,35 @@
 .video-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .search-bar {
         display: flex;
     }
     .search-bar input {
+        outline: none;
+        width: 100%;
         border: solid 3px #fff;
         box-sizing: border-box;
         font-size: 2em;
         height: 2em;
-        padding: .5em;
-        transition: border 0.5s ease-in;
+        padding: 0.5em;
+        transition: border 0.3s ease-in;
+        border: solid 2px transparent;
     }
-    
+
     .search-bar input:focus {
-        border: solid 4px #09f;
+        border: solid 2px #09f;
     }
-    
+
     .search-bar button {
         width: 80px;
-        background: #2196F3;
+        background: #2196f3;
         font-size: 1.3em;
         border: 1px solid grey;
         border-left: none;
     }
-    
+
     .search-bar button:hover {
         background: #0b7dda;
-    }
-    
-    .search-bar input {
-        width: 70%;
     }
 }

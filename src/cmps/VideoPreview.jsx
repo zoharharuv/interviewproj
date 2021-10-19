@@ -10,7 +10,7 @@ export class VideoPreview extends Component {
                     <div className="video-details flex col align-center gap" >
                         <span>{video.snippet.title}</span>
                         <span>{video.snippet.description}</span>
-                        <span>{video.snippet.publishedAt.toLocaleString('en-US')}</span>
+                        <span>Date: {video.snippet.publishedAt.substring(0, 10)}</span>
                     </div>
                     <span onClick={() => onPlayVideo(video)} className="play-btn flex align-center gap">
                         <img src={playImg} alt="" height="16px" />

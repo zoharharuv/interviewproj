@@ -14,12 +14,11 @@ export class App extends React.Component {
   }
 
   async componentDidMount() {
-    const videos = await videoService.getVideos('bruria')
-
-    this.setState({ 
+    const videos = await videoService.getVideos('Coding Academy')
+    this.setState({
       videos,
       playingVideo: videos[0]
-     })
+    })
   }
 
   onSearchVideos = async (searchKey) => {
@@ -28,8 +27,7 @@ export class App extends React.Component {
   }
 
   onPlayVideo = (playingVideo) => {
-    console.log("🚀 ~ file: App.jsx ~ line 27 ~ App ~ playingVideo", playingVideo)
-    playingVideo.id.videoId+=`?autoplay=1`
+    playingVideo.id.videoId += `?autoplay=1`
     this.setState({ playingVideo })
   }
 
@@ -41,7 +39,7 @@ export class App extends React.Component {
         <VideoSearch onSearchVideos={this.onSearchVideos} />
         <VideoList onPlayVideo={this.onPlayVideo} videos={videos} />
         <VideoPlayer playingVideo={playingVideo} />
-        <AppFooter vp={this.state.playingVideo} />
+        <AppFooter currentVideo={this.state.playingVideo} />
       </section>
     )
   }
