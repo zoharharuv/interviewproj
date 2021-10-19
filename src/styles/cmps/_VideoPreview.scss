@@ -1,12 +1,30 @@
 .video-preview {
     .video-card {
-        padding: 0.35rem;
+        padding: 0.55rem;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        background: #dcdcdc6b;
+        gap:10px;
+
         .video-details {
             span {
                 max-width: 25ch;
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 overflow: hidden;
+            }
+        }
+        .play-btn {
+            border: 1px #ccc solid;
+            background-color: transparent;
+            border-radius: 5px;
+            padding: 5px;
+            align-self: flex-start;
+            cursor: pointer;
+            transition: 0.4s;
+            &:hover{
+                opacity: 0.8;
             }
         }
     }
