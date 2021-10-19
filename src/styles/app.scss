@@ -12,34 +12,24 @@
     "footer footer footer footer";
 }
 
-.app-header{
-  background-color: aqua;
+.app-header {
   grid-area: header;
 }
-.video-search{
-  background-color: rgb(228, 159, 56);
+.video-search {
   grid-area: search;
 }
-.video-list{
-  // background-color: blue;
+.video-list {
   grid-area: list;
 }
-.video-player{
-  background-color: brown;
+.video-player {
   grid-area: player;
 }
-.app-footer{
-  background-color: cornflowerblue;
+.app-footer {
   grid-area: footer;
 }
 
-
-
-
-
 .title {
   text-align: center;
-  font-family: arial, sans-serif;
   font-size: 18px;
 }
 
