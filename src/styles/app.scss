@@ -1,6 +1,41 @@
 .app {
-  padding: 20px;
+  // padding: 20px;
+  display: grid;
+  height: 100vh;
+  gap: 10px;
+  grid-template-columns: 50px 450px 1fr 50px;
+  grid-template-rows: 100px 100px 1fr 100px;
+  grid-template-areas:
+    "header header header header"
+    ". search search ."
+    ". list player ."
+    "footer footer footer footer";
 }
+
+.app-header{
+  background-color: aqua;
+  grid-area: header;
+}
+.video-search{
+  background-color: rgb(228, 159, 56);
+  grid-area: search;
+}
+.video-list{
+  // background-color: blue;
+  grid-area: list;
+}
+.video-player{
+  background-color: brown;
+  grid-area: player;
+}
+.app-footer{
+  background-color: cornflowerblue;
+  grid-area: footer;
+}
+
+
+
+
 
 .title {
   text-align: center;

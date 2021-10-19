@@ -12,9 +12,9 @@ async function getVideos(searchKey) {
         &videoEmbeddable=true&type=video&key=${YOUTUBE_KEY}&q=${searchKey}`;
         try {
             const res = await axios.get(youtubeURL)
-            gYoutubeData[searchKey].push(res.data.items);
+            gYoutubeData[searchKey].push(res.data.items.splice(0,2));
             saveToStorage('youtubeDB', gYoutubeData)
-            return res.data.items[0];
+            return res.data.items.splice(0,2);
         } catch (err) {
             throw new Error('got this:', err);
         }

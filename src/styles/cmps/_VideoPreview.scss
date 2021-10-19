@@ -1,6 +1,13 @@
 .video-preview {
     .video-card {
-        background-color: rgb(199, 137, 21);
-        margin-bottom: 20px;
+        padding: 0.35rem;
+        .video-details {
+            span {
+                max-width: 25ch;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
     }
 }
