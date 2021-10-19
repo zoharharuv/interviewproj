@@ -4,61 +4,41 @@ import { VideoSearch } from './cmps/VideoSearch';
 import { VideoList } from './cmps/VideoList';
 import { VideoPlayer } from './cmps/VideoPlayer';
 import { AppFooter } from './cmps/AppFooter';
-import { getVideos, startVideo } from './services/video.service'
+import { videoService } from './services/video.service'
 
 
-class App extends React.Component {
-  state = { videos: [], showAlert: false }
+export class App extends React.Component {
+  state = {
+    videos: [],
+    playingVideo: null
+  }
 
   async componentDidMount() {
-    const videos = await getVideos()
+    const videos = await videoService.getVideos('bruria')
     this.setState({ videos })
   }
 
-  componentWillUnmount() {
+  onSearchVideos = async (searchKey) => {
+    const videos = await videoService.getVideos(searchKey)
+    this.setState({ videos })
   }
 
-  onPerformVideo = (video) => {
-    console.log('onPerformVideo', video);
-    startVideo(video)
+  onPlayVideo = (playingVideo) => {
+    console.log("🚀 ~ file: App.jsx ~ line 27 ~ App ~ playingVideo", playingVideo)
+    this.setState({ playingVideo })
   }
 
   render() {
+    const { videos, playingVideo } = this.state
     return (
       <section className="app">
         <AppHeader />
-        <VideoSearch />
-        <VideoList />
-        <VideoPlayer />
+        <VideoSearch onSearchVideos={this.onSearchVideos} />
+        <VideoList onPlayVideo={this.onPlayVideo} videos={videos} />
+        <VideoPlayer playingVideo={playingVideo} />
         <AppFooter />
       </section>
     )
   }
 }
 
-export default App;
-
-{/* <main class="main-container">
-<section class="left-row">
-  <header>
-    <img class="logo" src="img/logo.svg" alt="Wikitube"/>
-  </header>
-  <div class="top5-container"></div>
-</section>
-
-<section class="right-row">
-  <div class="search-bar">
-    <input type="search" id="search-bar" placeholder="Search a video!" onkeypress="onEnter(event)" autofocus/>
-    <button onclick="onSearch()">🔍</button>
-  </div>
-  <div class="video-container"></div>
-  <div class="wiki-container"></div>
-</section>
-
-</main>
-
-<section class="footer">
-<div class="history"></div>
-<button id="clear-history" onclick="onClear()">Clear history</button>
-<button id="change-theme" onclick="onChangeTheme()">🎨</button>
-</section> */}

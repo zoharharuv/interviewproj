@@ -1,3 +1,35 @@
-.video-search{
+.video-search {
+    .search-bar {
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px 0;
+    }
+    .search-bar input {
+        border: solid 3px #fff;
+        box-sizing: border-box;
+        font-size: 2em;
+        height: 2em;
+        padding: .5em;
+        transition: border 0.5s ease-in;
+    }
     
+    .search-bar input:focus {
+        border: solid 4px #09f;
+    }
+    
+    .search-bar button {
+        width: 80px;
+        background: #2196F3;
+        font-size: 1.3em;
+        border: 1px solid grey;
+        border-left: none;
+    }
+    
+    .search-bar button:hover {
+        background: #0b7dda;
+    }
+    
+    .search-bar input {
+        width: 70%;
+    }
 }

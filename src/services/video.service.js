@@ -1,49 +1,29 @@
 import axios from 'axios'
+import { loadFromStorage, saveToStorage } from "./storage.service";
 
+const YOUTUBE_KEY = 'AIzaSyBxe9n_zywx_EH1njOLVtNXGIlojjcAhbs';
+let gYoutubeData = loadFromStorage('youtubeDB');
 
-export {
-  getVideos,
-  getById,
-  remove,
-  save,
-  startVideo
+async function getVideos(searchKey) {
+    if (!gYoutubeData) gYoutubeData = {};
+    if (!gYoutubeData[searchKey]) {
+        gYoutubeData[searchKey] = [];
+        const youtubeURL = `https://www.googleapis.com/youtube/v3/search?part=snippet
+        &videoEmbeddable=true&type=video&key=${YOUTUBE_KEY}&q=${searchKey}`;
+        try {
+            const res = await axios.get(youtubeURL)
+            gYoutubeData[searchKey].push(res.data.items);
+            saveToStorage('youtubeDB', gYoutubeData)
+            return res.data.items[0];
+        } catch (err) {
+            throw new Error('got this:', err);
+        }
+    } else {
+        if (!gYoutubeData[searchKey].length) return null;
+        return gYoutubeData[searchKey][0];
+    }
 }
 
-const instance = axios.create({
-  baseURL: "http://localhost:3000/api/video"
-});
-
-async function getVideos() {
-  const res = await instance.get("/")
-  return res.data
-}
-
-async function getById(id) {
-  const res = await instance.get(`/${id}`)
-  return res.data
-}
-
-async function remove(id) {
-  const res = await instance.delete(`/${id}`)
-  return res.data
-}
-
-
-async function _update(video) {
-  const res = await instance.put(`/${video._id}`, video)
-  return res.data
-}
-
-async function _add(video) {
-  const res = await instance.post(`/`, video)
-  return res.data
-}
-
-function save(video) {
-  return video._id ? _update(video) : _add(video)
-}
-
-async function startVideo(video) {
-  const res = await instance.post(`/${video._id}/start`)
-  return res.data
+export const videoService = {
+    getVideos
 }
