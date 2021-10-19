@@ -1,0 +1,14 @@
+@import './variables.scss';
+@import './base.scss';
+@import './helpers.scss';
+@import './mixins.scss';
+
+@import './app.scss';
+
+//CMPS
+@import './cmps/AppFooter';
+@import './cmps/AppHeader';
+@import './cmps/VideoList';
+@import './cmps/VideoPlayer';
+@import './cmps/VideoPreview';
+@import './cmps/VideoSearch';
