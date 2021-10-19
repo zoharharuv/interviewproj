@@ -1,6 +1,4 @@
-.app-footer{
-    
-    color:whitesmoke;
-    background-color: #3a3a3a;
-
+.app-footer {
+    color: $clr2;
+    background-color: lighten($clr1, 20%);
 }

@@ -8,7 +8,7 @@ export class AppFooter extends Component {
                 {
                     currentVideo && <h3>
                        {
-                           `Currently Playing: ${currentVideo.snippet.title}`
+                           `Currently Playing: ${currentVideo.title}`
                        }
                     </h3>
                 }

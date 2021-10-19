@@ -27,7 +27,7 @@ export class App extends React.Component {
   }
 
   onPlayVideo = (playingVideo) => {
-    playingVideo.id.videoId += `?autoplay=1`
+    playingVideo.id += `?autoplay=1`
     this.setState({ playingVideo })
   }
 

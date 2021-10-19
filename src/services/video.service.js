@@ -12,9 +12,11 @@ async function getVideos(searchKey) {
         &videoEmbeddable=true&type=video&key=${YOUTUBE_KEY}&q=${searchKey}`;
         try {
             const res = await axios.get(youtubeURL)
-            gYoutubeData[searchKey].push(res.data.items.splice(0,4));
+            let videos = res.data.items.splice(0, 4);
+            videos = _deconstructVideos(videos)
+            gYoutubeData[searchKey].push(videos);
             saveToStorage('youtubeDB', gYoutubeData)
-            return res.data.items.splice(0,4);
+            return videos
         } catch (err) {
             throw new Error('got this:', err);
         }
@@ -22,6 +24,19 @@ async function getVideos(searchKey) {
         if (!gYoutubeData[searchKey].length) return null;
         return gYoutubeData[searchKey][0];
     }
+}
+
+function _deconstructVideos(videos) {
+    return (videos.map(({ id, snippet }) => {
+        return {
+            id: id.videoId,
+            description: snippet.description,
+            publishedAt: snippet.publishedAt,
+            title: snippet.title,
+            imgUrl: snippet.thumbnails.default.url
+        }
+    })
+    )
 }
 
 export const videoService = {

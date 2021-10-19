@@ -4,7 +4,7 @@
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         border-radius: 5px;
         margin-bottom: 15px;
-        background: #dcdcdc6b;
+        background: $transGrey;
         gap: 10px;
         @include for-narrow-layout {
             max-width: 100vw;
@@ -22,7 +22,7 @@
             }
         }
         .play-btn {
-            border: 1px #ccc solid;
+            border: 1px $grey solid;
             background-color: transparent;
             border-radius: 5px;
             padding: 5px;

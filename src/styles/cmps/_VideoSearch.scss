@@ -8,7 +8,7 @@
     .search-bar input {
         outline: none;
         width: 100%;
-        border: solid 3px #fff;
+        border: solid 3px $white;
         box-sizing: border-box;
         font-size: 2em;
         height: 2em;
@@ -18,18 +18,18 @@
     }
 
     .search-bar input:focus {
-        border: solid 2px #09f;
+        border: solid 2px $blue;
     }
 
     .search-bar button {
         width: 80px;
-        background: #2196f3;
+        background: $blue;
         font-size: 1.3em;
-        border: 1px solid grey;
+        border: 1px solid $grey;
         border-left: none;
     }
 
     .search-bar button:hover {
-        background: #0b7dda;
+        background: darken($blue, 10%);
     }
 }

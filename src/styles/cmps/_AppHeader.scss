@@ -1,17 +1,17 @@
 .app-header {
-    background-color: #333333;
+    background-color: $clr1;
     padding: 0 105px;
     @include for-narrow-layout {
         padding: 0;
         max-width: 100vw;
     }
-    color: whitesmoke;
+    color: $clr2;
     h1 {
         margin: 0;
         font-size: 3rem;
         cursor: pointer;
         &:hover {
-            text-shadow: 0 0 10px #989898;
+            text-shadow: 0 0 10px $transGrey;
         }
     }
     nav {
@@ -24,7 +24,7 @@
             cursor: pointer;
             transition: color 0.2s;
             &:hover {
-                color: rgb(199, 194, 194);
+                color: $grey;
             }
         }
     }
