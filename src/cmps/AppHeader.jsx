@@ -3,8 +3,13 @@ import { Component } from "react";
 export class AppHeader  extends Component{
     render(){
         return(
-            <section className="app-header flex center-center">
+            <section className="app-header flex align-center space-between">
                     <h1>PlayList</h1>
+                    <nav className="flex ">
+                        <span>test</span>
+                        <span>test</span>
+                        <span>test</span>
+                    </nav>
             </section>
         )
     }

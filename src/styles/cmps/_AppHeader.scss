@@ -1,7 +1,19 @@
 .app-header {
     background-color: #333333;
+    padding: 0 60px;
+    @include for-narrow-layout {
+        padding: 0;
+        max-width: 100vw;
+    }
+    color: whitesmoke;
     h1 {
-        color: whitesmoke;
+        margin: 0;
         font-size: 3rem;
+    }
+    nav {
+        gap: 1rem;
+        @include for-narrow-layout {
+            gap: 0.5rem;
+        }
     }
 }

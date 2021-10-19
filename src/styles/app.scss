@@ -10,6 +10,16 @@
     ". search search ."
     ". list player ."
     "footer footer footer footer";
+  @include for-narrow-layout {
+    grid-template-columns: 0px 1fr 0px;
+    grid-template-rows: 100px 100px 1fr 1fr 100px;
+    grid-template-areas:
+      "header header header"
+      ". search  ."
+      ". player  ."
+      ". list  ."
+      "footer footer footer";
+  }
 }
 
 .app-header {
@@ -26,13 +36,4 @@
 }
 .app-footer {
   grid-area: footer;
-}
-
-.title {
-  text-align: center;
-  font-size: 18px;
-}
-
-header {
-  margin: 10px 0;
 }

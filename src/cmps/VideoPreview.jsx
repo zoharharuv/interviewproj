@@ -3,7 +3,6 @@ import { Component } from "react";
 export class VideoPreview extends Component {
     render() {
         const { video, onPlayVideo } = this.props
-        console.log("🚀 ~ VideoPreview ~ render ~ video", video)
         return (
             <section className="video-preview">
                 <div className="video-card flex align-center space-between">

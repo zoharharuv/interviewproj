@@ -7,7 +7,7 @@ export class VideoList extends Component {
         return (
             <section className="video-list">
                 {videos.length ? videos.map(video => <VideoPreview
-                    key={video}
+                    key={video.id.videoId}
                     video={video}
                     onPlayVideo={onPlayVideo} />)
                 : <h1>Loading..</h1>}

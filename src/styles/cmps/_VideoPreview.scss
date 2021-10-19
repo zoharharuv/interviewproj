@@ -1,6 +1,9 @@
 .video-preview {
     .video-card {
         padding: 0.35rem;
+        @include for-narrow-layout {
+            max-width: 100vw;
+        }
         .video-details {
             span {
                 max-width: 25ch;
