@@ -1,4 +1,4 @@
-@mixin for-narrow-layout {
+@mixin for-mobile-layout {
     @media (max-width: $break-mobile) {
         @content;
     }

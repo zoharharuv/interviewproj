@@ -9,11 +9,23 @@
     h1 {
         margin: 0;
         font-size: 3rem;
+        cursor: pointer;
+        &:hover {
+            text-shadow: 0 0 10px #989898;
+        }
     }
     nav {
         gap: 1rem;
         @include for-narrow-layout {
             gap: 0.5rem;
+        }
+        span {
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: color 0.2s;
+            &:hover {
+                color: rgb(199, 194, 194);
+            }
         }
     }
 }
